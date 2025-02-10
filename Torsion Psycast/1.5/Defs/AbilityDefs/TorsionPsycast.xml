@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<!--
+	-Only works on male pawns
+	-Cannot be used on sterile pawns
+	-Upon reaching 100% severity, applies Sterile to Whole Body and Infection to Torso
+	-->
+
+	<AbilityDef ParentName="PsycastBase">
+		<defName>TP_CBT</defName>
+		<label>torsion</label>
+		<description>Use the Johnson-Tanaka principle to project a small angular momentum field onto the target's testicles, causing painful torsion. Only works on males.</description>
+		<level>1</level>
+		<iconPath>UI/Abilities/TesticularTorsion</iconPath>
+		<writeCombatLog>True</writeCombatLog>
+		<hostile>true</hostile>
+		<statBases>
+			<Ability_EntropyGain>20</Ability_EntropyGain>
+			<Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
+			<Ability_Duration>30000</Ability_Duration>
+		</statBases>
+		<verbProperties>
+			<warmupTime>0.25</warmupTime>
+			<range>24.9</range>
+			<targetParams>
+				<canTargetAnimals>True</canTargetAnimals>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>TP_Torsion</hediffDef>
+				<goodwillImpact>-15</goodwillImpact>
+				<applicableToMechs>False</applicableToMechs>
+				<psychic>True</psychic>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+			</li>
+		</comps>
+	</AbilityDef>
+
+</Defs>

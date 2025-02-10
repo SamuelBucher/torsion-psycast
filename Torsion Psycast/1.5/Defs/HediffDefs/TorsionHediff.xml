@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="DiseaseBase">
+		<defName>TP_Torsion</defName>
+		<label>testicular torsion</label>
+		<description>Testicular torsion occurs when the spermatic cord, from which the testicle is suspended, twists, cutting off the blood supply to the testicle. The most common symptom is sudden, severe testicular pain. The testicle may be higher than usual in the scrotum and vomiting may occur.
+			
+	If successfully treated within six hours onset, a full recovery is expected. However, if delayed for 12 or more hours the testicle is typically not salvageable.</description>
+		<descriptionShort>Testicular torsion causes the testicle to twist and cuts off its blood supply. This causes severe pain and requires emergency care.</descriptionShort>
+		<makesSickThought>true</makesSickThought>
+		<hediffClass>HediffWithComps</hediffClass>
+		<stages>
+			<li>
+				<vomitMtbDays>0.1</vomitMtbDays>
+				<painOffset>0.4</painOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.8</postFactor>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>20000~30000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<RecipeDef ParentName="SurgeryFlesh">
+		<defName>TP_CureTorsion</defName>
+		<label>untwist testicles</label>
+		<description>Surgically untwist the testicles to restore bloodflow. A relatively simple procedure.</description>
+		<workerClass>Recipe_RemoveHediff</workerClass>
+		<jobString>Untwisting testicles.</jobString>
+		<workAmount>1200</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<isViolation>false</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+		<removesHediff>TP_Torsion</removesHediff>
+		<successfullyRemovedHediffMessage>{0} has successfully untwisted {1}'s testicles.</successfullyRemovedHediffMessage>
+		<skillRequirements>
+			<Medicine>4</Medicine>
+		</skillRequirements>
+		<ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<categories>
+				<li>Medicine</li>
+			</categories>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>Human</li>
+		</recipeUsers>
+	</RecipeDef>
+
+</Defs>
