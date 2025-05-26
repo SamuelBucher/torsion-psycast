@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<TorsionPsycast.TargetNotMale>{0} is not male</TorsionPsycast.TargetNotMale>
+	<TorsionPsycast.TargetSterile>{0} is sterile</TorsionPsycast.TargetSterile>
+	<TorsionPsycast.TargetHasTorsion>{0} is already suffering from torsion</TorsionPsycast.TargetHasTorsion>
+	<TorsionPsycast.TargetWrongRace>{0_indefinite} cannon be affected by torsion</TorsionPsycast.TargetWrongRace>
+	
+</LanguageData>

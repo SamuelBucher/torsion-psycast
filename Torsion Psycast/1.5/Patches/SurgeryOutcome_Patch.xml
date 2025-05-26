@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/SurgeryOutcomeEffectDef[defName="SurgeryOutcomeBase"]/outcomes</xpath>
+		<value>
+			<li Class="SurgeryOutcome_FailureWithHediff">
+				<chance>0.05</chance>
+				<failedHediff MayRequire="Ludeon.RimWorld.Biotech">Sterilized</failedHediff>
+				<applyToRecipes>
+					<li>TP_CureTorsion</li>
+				</applyToRecipes>
+				<failure>true</failure>
+				<totalDamage>10</totalDamage>
+				<applyEffectsToPart>true</applyEffectsToPart>
+				<letterLabel>Surgery failed on {PATIENT_labelShort}: Sterilized</letterLabel>
+				<letterText>{SURGEON_labelShort} has failed while operating on {PATIENT_labelShort} ({RECIPE_label}), leaving {PATIENT_objective} sterile.</letterText>
+			</li>
+		</value>
+	</Operation>
+</Patch>

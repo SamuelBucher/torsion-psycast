@@ -100,7 +100,7 @@
           }
         },
         "runtime": {
-          "lib/net472/0Harmony.dll": {
+          "lib/net472/_._": {
             "related": ".pdb;.xml"
           }
         }
@@ -205,7 +205,7 @@
           }
         },
         "runtime": {
-          "lib/net472/0Harmony.dll": {
+          "lib/net472/_._": {
             "related": ".pdb;.xml"
           }
         }
@@ -310,7 +310,7 @@
           }
         },
         "runtime": {
-          "lib/net472/0Harmony.dll": {
+          "lib/net472/_._": {
             "related": ".pdb;.xml"
           }
         }
@@ -415,7 +415,7 @@
           }
         },
         "runtime": {
-          "lib/net472/0Harmony.dll": {
+          "lib/net472/_._": {
             "related": ".pdb;.xml"
           }
         }
@@ -520,7 +520,7 @@
           }
         },
         "runtime": {
-          "lib/net472/0Harmony.dll": {
+          "lib/net472/_._": {
             "related": ".pdb;.xml"
           }
         }
@@ -686,13 +686,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Torsion Psycast\\Source\\TorsionPsycast.csproj",
+      "projectUniqueName": "C:\\Users\\Maxim\\OneDrive\\Desktop\\Creative\\Modding\\RimWorld\\Torsion Psycast\\Source\\TorsionPsycast.csproj",
       "projectName": "TorsionPsycast",
-      "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Torsion Psycast\\Source\\TorsionPsycast.csproj",
+      "projectPath": "C:\\Users\\Maxim\\OneDrive\\Desktop\\Creative\\Modding\\RimWorld\\Torsion Psycast\\Source\\TorsionPsycast.csproj",
       "packagesPath": "C:\\Users\\Maxim\\.nuget\\packages\\",
-      "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Torsion Psycast\\Source\\obj\\",
+      "outputPath": "C:\\Users\\Maxim\\OneDrive\\Desktop\\Creative\\Modding\\RimWorld\\Torsion Psycast\\Source\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
@@ -712,6 +713,11 @@
         "net472": {
           "projectReferences": {}
         }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -722,6 +728,7 @@
             "version": "[1.5.4104, )"
           },
           "Lib.Harmony": {
+            "include": "Compile, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "target": "Package",
             "version": "[2.3.3, )"
           }

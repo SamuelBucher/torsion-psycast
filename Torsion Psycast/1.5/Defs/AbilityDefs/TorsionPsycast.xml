@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-	<!--
-	-Only works on male pawns
-	-Cannot be used on sterile pawns
-	-Upon reaching 100% severity, applies Sterile to Whole Body and Infection to Torso
-	-->
 
 	<AbilityDef ParentName="PsycastBase">
 		<defName>TP_CBT</defName>
@@ -15,15 +9,17 @@
 		<iconPath>UI/Abilities/TesticularTorsion</iconPath>
 		<writeCombatLog>True</writeCombatLog>
 		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<ai_IsOffensive>true</ai_IsOffensive>
 		<statBases>
-			<Ability_EntropyGain>20</Ability_EntropyGain>
+			<Ability_EntropyGain>15</Ability_EntropyGain>
 			<Ability_PsyfocusCost>0.05</Ability_PsyfocusCost>
-			<Ability_Duration>30000</Ability_Duration>
 		</statBases>
 		<verbProperties>
 			<warmupTime>0.25</warmupTime>
 			<range>24.9</range>
 			<targetParams>
+				<canTargetSelf>True</canTargetSelf>
 				<canTargetAnimals>True</canTargetAnimals>
 			</targetParams>
 		</verbProperties>
@@ -38,7 +34,32 @@
 			<li Class="CompProperties_AbilityFleckOnTarget">
 				<fleckDef>PsycastPsychicEffect</fleckDef>
 			</li>
+			<li Class="TorsionPsycast.CompProperties_AbilityTargetBalls">
+				<excludeRaces>
+					<li>Megascarab</li>
+					<li>Spelopede</li>
+					<li>Megaspider</li>
+					<li>Cassowary</li>
+					<li>Duck</li>
+					<li>Goose</li>
+					<li>Emu</li>
+					<li>Tortoise</li>
+					<li>Turkey</li>
+					<li>Ostrich</li>
+					<li>Iguana</li>
+					<li>Cobra</li>
+					<li>Chicken</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Basic</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Woodmaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Berrymaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Medicinemaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Gaumaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Carrier</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Clawer</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Barkskin</li>
+				</excludeRaces>
+			</li>
 		</comps>
 	</AbilityDef>
-
+	
 </Defs>

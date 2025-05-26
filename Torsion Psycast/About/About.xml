@@ -5,8 +5,9 @@
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
-	<packageId>SamBucher.CBT</packageId>
+	<packageId>SamBucher.torsionpsycast</packageId>
 	<description>
+		Adds a testicular torsion psycast.
 	</description>
 	<modDependencies>
 		<li>

@@ -1,49 +1,86 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
-	<HediffDef ParentName="DiseaseBase">
+	
+	<HediffDef>
 		<defName>TP_Torsion</defName>
+		<hediffClass>HediffWithComps</hediffClass>
 		<label>testicular torsion</label>
 		<description>Testicular torsion occurs when the spermatic cord, from which the testicle is suspended, twists, cutting off the blood supply to the testicle. The most common symptom is sudden, severe testicular pain. The testicle may be higher than usual in the scrotum and vomiting may occur.
-			
-	If successfully treated within six hours onset, a full recovery is expected. However, if delayed for 12 or more hours the testicle is typically not salvageable.</description>
-		<descriptionShort>Testicular torsion causes the testicle to twist and cuts off its blood supply. This causes severe pain and requires emergency care.</descriptionShort>
+
+If successfully treated within six hours onset, a full recovery is expected. However, if delayed for 12 or more hours the testicle is typically not salvageable.</description>
+		<descriptionShort>Testicular torsion causes the testicles to twist and cuts off its blood supply. This causes severe pain and requires emergency care.</descriptionShort>
 		<makesSickThought>true</makesSickThought>
-		<hediffClass>HediffWithComps</hediffClass>
+		<initialSeverity>0.001</initialSeverity>
+		<minSeverity>0.001</minSeverity>
+		<maxSeverity>1</maxSeverity>
+		<tendable>false</tendable>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
 		<stages>
 			<li>
+				<label>initial</label>
 				<vomitMtbDays>0.1</vomitMtbDays>
 				<painOffset>0.4</painOffset>
 				<capMods>
 					<li>
 						<capacity>Moving</capacity>
-						<postFactor>0.8</postFactor>
+						<postFactor>0.75</postFactor>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<label>advanced</label>
+				<vomitMtbDays>0.1</vomitMtbDays>
+				<painOffset>0.6</painOffset>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<postFactor>0.6</postFactor>
 					</li>
 				</capMods>
 			</li>
 		</stages>
 		<comps>
-			<li Class="HediffCompProperties_Disappears">
-				<disappearsAfterTicks>20000~30000</disappearsAfterTicks>
-				<showRemainingTime>true</showRemainingTime>
+			<li Class="HediffCompProperties_Immunizable">
+				<severityPerDayNotImmune>2.0</severityPerDayNotImmune>
+			</li>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>Sterilized</li>
+				</hediffs>
+			</li>
+			<li Class="HediffCompProperties_ReplaceHediff">
+				<hediffs>
+					<li>
+						<hediff>WoundInfection</hediff>
+						<partsToAffect>
+							<li>Torso</li>
+						</partsToAffect>
+					</li>
+					<li>
+						<hediff>Sterilized</hediff>
+					</li>
+				</hediffs>
+				<message>{PAWN_nameDef}'s testicles have become unsalvageable.</message>
 			</li>
 		</comps>
 	</HediffDef>
-
+	
 	<RecipeDef ParentName="SurgeryFlesh">
 		<defName>TP_CureTorsion</defName>
 		<label>untwist testicles</label>
-		<description>Surgically untwist the testicles to restore bloodflow. A relatively simple procedure.</description>
+		<description>Untwist the testicles to restore bloodflow. A relatively simple procedure.</description>
 		<workerClass>Recipe_RemoveHediff</workerClass>
 		<jobString>Untwisting testicles.</jobString>
-		<workAmount>1200</workAmount>
+		<workAmount>800</workAmount>
 		<hideBodyPartNames>true</hideBodyPartNames>
 		<isViolation>false</isViolation>
 		<targetsBodyPart>false</targetsBodyPart>
 		<removesHediff>TP_Torsion</removesHediff>
+		<surgerySuccessChanceFactor>3</surgerySuccessChanceFactor>
 		<successfullyRemovedHediffMessage>{0} has successfully untwisted {1}'s testicles.</successfullyRemovedHediffMessage>
 		<skillRequirements>
-			<Medicine>4</Medicine>
+			<Medicine>2</Medicine>
 		</skillRequirements>
 		<ingredients>
 			<li>
@@ -64,5 +101,5 @@
 			<li>Human</li>
 		</recipeUsers>
 	</RecipeDef>
-
+	
 </Defs>

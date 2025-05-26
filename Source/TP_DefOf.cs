@@ -1,13 +1,16 @@
-﻿using System;
+﻿using RimWorld;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Verse;
 
 namespace TorsionPsycast
 {
-    public class Class1
+    [DefOf]
+    public static class TP_HediffDefOf
     {
-
+        public static HediffDef TP_Torsion;
     }
 }
