@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<VFECore.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+		<defName>TP_CBT_VPE</defName>
+		<label>torsion</label>
+		<description>Use the Johnson-Tanaka principle to project a small angular momentum field onto the target's testicles, causing painful torsion. Only works on males.</description>
+		<iconPath>UI/Abilities/TesticularTorsion</iconPath>
+		<abilityClass>VFECore.Abilities.Ability_Blank</abilityClass>
+		<targetModes>
+			<li>Pawn</li>
+		</targetModes>
+		<castTime>25</castTime>
+		<range>25</range>
+		<fleckOnTarget>PsycastPsychicEffect</fleckOnTarget>
+		<goodwillImpact>-15</goodwillImpact>
+		<targetingParameters>
+			<canTargetSelf>True</canTargetSelf>
+		</targetingParameters>
+		<modExtensions>
+			<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+				<path>VPE_Archon</path>
+				<level>1</level>
+				<order>2</order>
+				<psyfocusCost>0.05</psyfocusCost>
+				<entropyGain>15</entropyGain>
+				<psychic>true</psychic>
+			</li>
+			<li Class="VFECore.Abilities.AbilityExtension_Hediff">
+				<hediff>TP_Torsion</hediff>
+				<bodyPartToApply>Torso</bodyPartToApply>
+			</li>
+			<li Class="TorsionPsycast.AbilityExtension_TargetBalls">
+				<excludeRaces>
+					<li>Megascarab</li>
+					<li>Spelopede</li>
+					<li>Megaspider</li>
+					<li>Cassowary</li>
+					<li>Duck</li>
+					<li>Goose</li>
+					<li>Emu</li>
+					<li>Tortoise</li>
+					<li>Turkey</li>
+					<li>Ostrich</li>
+					<li>Iguana</li>
+					<li>Cobra</li>
+					<li>Chicken</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Basic</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Woodmaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Berrymaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Medicinemaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Gaumaker</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Carrier</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Clawer</li>
+					<li MayRequire="ludeon.rimworld.ideology">Dryad_Barkskin</li>
+				</excludeRaces>
+			</li>
+		</modExtensions>
+	</VFECore.Abilities.AbilityDef>
+	
+</Defs>

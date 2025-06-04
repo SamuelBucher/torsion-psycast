@@ -2,6 +2,7 @@
 <ModMetaData>
 	<name>Torsion Psycast</name>
 	<author>SamBucher</author>
+	<modVersion>1.1</modVersion>
 	<supportedVersions>
 		<li>1.5</li>
 	</supportedVersions>
@@ -18,7 +19,4 @@
 	<loadAfter>
 		<li>Ludeon.RimWorld.royalty</li>
 	</loadAfter>
-	<incompatibleWith>
-		<li>vanillaexpanded.vpsycastse</li>
-	</incompatibleWith>
 </ModMetaData>
