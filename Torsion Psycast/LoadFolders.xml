@@ -6,4 +6,9 @@
 		<li>1.5</li>
 		<li IfModActive="vanillaexpanded.vpsycastse">1.5/Compatibility/VPE</li>
 	</v1.5>
+	<v1.6>
+		<li>/</li>
+		<li>1.5</li>
+		<li IfModActive="vanillaexpanded.vpsycastse">1.5/Compatibility/VPE</li>
+	</v1.6>
 </loadFolders>
